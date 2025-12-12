@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "aplikasi pengelolaan barang",
+  "homepage": "https://github.com/HuntNugie/express-backend-ngk-barang#readme",
+  "bugs": {
+    "url": "https://github.com/HuntNugie/express-backend-ngk-barang/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HuntNugie/express-backend-ngk-barang.git"
+  },
+  "license": "ISC",
+  "author": "Nugie kurniawan (HuntNugie)",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@prisma/client": "^6.19.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mysql2": "^3.15.3",
+    "nodemon": "^3.1.11",
+    "prisma": "^6.19.0"
+  }
+}
