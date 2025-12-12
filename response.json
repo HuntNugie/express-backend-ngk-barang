@@ -3,6 +3,12 @@
         "opening":{
             "status":true,
             "message":"selamat datang di backend express ngk barang"
+        },
+        "error":{
+            "err_NoToken":{
+                "status":false,
+                "message":"tidak ada token untuk akses "
+            }
         }
     }
 }

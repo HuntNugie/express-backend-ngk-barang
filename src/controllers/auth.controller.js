@@ -1,4 +1,6 @@
 import User from "../models/User.js";
+import resJson from "../../utils/getRulesResponse.js";
+import { klarif } from "../../utils/jwt.js";
 export const register = async (req, res) => {
     try {
         const add = await User.create({
@@ -16,5 +18,18 @@ export const register = async (req, res) => {
             status: false,
             error,
         });
+    }
+};
+
+export const checkMe = async (req, res) => {
+    try {
+        const token = req.cookies.token;
+        if(!token){
+            throw resJson.response.error.err_NoToken
+        }
+        const payload = klarif(token);
+        return res.status(200).json(payload)
+    } catch (error) {
+        return res.status(401).json(error)
     }
 };
