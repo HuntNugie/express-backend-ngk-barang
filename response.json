@@ -1,0 +1,8 @@
+{
+    "response":{
+        "opening":{
+            "status":true,
+            "message":"selamat datang di backend express ngk barang"
+        }
+    }
+}
