@@ -1,3 +1,3 @@
 export const register = (req,res)=>{
-    res.json({'message' : "berhasil"})
+    res.json(req.result)
 }
