@@ -8,5 +8,5 @@ const indexRoute = Router();
 indexRoute.get("/", log, (req, res) => {
     res.json(resJson.response.opening);
 });
-indexRoute.use("/api", apiRoute);
+indexRoute.use("/api", log, apiRoute);
 export default indexRoute;
