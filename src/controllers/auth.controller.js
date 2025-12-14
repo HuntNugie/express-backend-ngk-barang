@@ -1,7 +1,7 @@
 import User from "../models/User.js";
 import {compare} from "../../utils/bcrypt.js";
 import resJson from "../../utils/getRulesResponse.js";
-import { ttd } from "../../utils/jwt.js";
+import {ttd} from "../../utils/jwt.js";
 export const register = async (req, res) => {
     try {
         const add = await User.create({
@@ -28,7 +28,7 @@ export const checkMe = async (req, res) => {
 };
 
 // untuk request login
-export const login = async(req, res) => {
+export const login = async (req, res) => {
     const {password} = req.result;
     const match = await compare(password, req.body.password);
 
@@ -38,11 +38,22 @@ export const login = async(req, res) => {
     // buat token
     const token = ttd(req.user);
 
-    res.cookie("token",token,{
+    res.cookie("token", token, {
+        httpOnly: true,
+        sameSite: "none",
+        secure: true,
+        maxAge: 60 * 60 * 1000,
+        path:"/"
+    });
+    return res.status(200).json(req.user);
+};
+
+export const logout = async(req,res)=>{
+    res.clearCookie("token",{
         httpOnly:true,
         sameSite:"none",
-        secure:true,
-        maxAge:3 * 60 * 1000
+        secure:true
     });
-    return res.status(200).json(resJson.response.success.suc_login);
-};
+
+    return res.status(200).json({status:true,message:"berhasil logout"})
+}

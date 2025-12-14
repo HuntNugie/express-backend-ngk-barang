@@ -3,7 +3,6 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import indexRoute from "./src/routes/arg.route.js";
 
-
 const app = express();
 
 app.use(
@@ -12,10 +11,10 @@ app.use(
         credentials: true,
     })
 );
-app.use(express.json())
+app.use(express.json());
 app.use(cookieParser());
 
 // untuk route
-app.use(indexRoute)
+app.use(indexRoute);
 
 export default app;

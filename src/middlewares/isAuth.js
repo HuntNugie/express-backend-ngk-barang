@@ -3,6 +3,7 @@ import resJson from "../../utils/getRulesResponse.js";
 export const isAuth = (req, res, next) => {
     try {
         const token = req.cookies.token;
+      
         if (!token) {
             throw resJson.response.error.err_NoToken;
         }

@@ -1,23 +1,31 @@
 {
-    "response":{
-        "opening":{
-            "status":true,
-            "message":"selamat datang di backend express ngk barang"
+    "response": {
+        "opening": {
+            "status": true,
+            "message": "selamat datang di backend express ngk barang"
         },
-        "success":{
-            "suc_login":{
-                "status":true,
-                "message":"anda berhasil login"
+        "success": {
+            "suc_login": {
+                "status": true,
+                "message": "anda berhasil login"
             }
         },
-        "error":{
-            "err_NoToken":{
-                "status":false,
-                "message":"tidak ada token untuk akses "
+        "error": {
+            "err_NoToken": {
+                "status": false,
+                "message": "tidak ada token untuk akses "
             },
-            "err_falsePassword":{
-                "status" : false,
-                "message": "username atau password anda salah"
+            "err_falsePassword": {
+                "status": false,
+                "error": [
+                    {
+                        "type": "field",
+                        "value": "ngkwassaddasdn_",
+                        "msg": "username atau password salah",
+                        "path": "username",
+                        "location": "body"
+                    }
+                ]
             }
         }
     }

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { checkMe, login, register } from "../controllers/auth.controller.js";
+import { checkMe, login, logout, register } from "../controllers/auth.controller.js";
 import regisValid from "../middlewares/validation/register.validation.js";
 import handleValidation from "../middlewares/handleValidation.js";
 import { result } from "../middlewares/isResult/regisResult.js";
@@ -14,6 +14,9 @@ route.post("/register",regisValid,handleValidation,result, register )
 
 // untuk check me
 route.get("/me",isAuth,checkMe);
+
+// untuk logout
+route.post("/logout",logout);
 
 // untuk login
 route.post("/login",loginValid,handleValidation,loginResult,login)

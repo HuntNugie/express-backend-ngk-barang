@@ -5,7 +5,7 @@ config();
 const secret = process.env.SECRET_JWT;
 
 export const ttd = (payload)=>{
-    const token = jwt.sign(payload,secret,{expiresIn:"3m"});
+    const token = jwt.sign(payload,secret,{expiresIn:"1h"});
     return token
 }
 
