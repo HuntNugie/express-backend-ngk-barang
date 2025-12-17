@@ -8,6 +8,10 @@
             "suc_login": {
                 "status": true,
                 "message": "anda berhasil login"
+            },
+            "suc_add_barang":{
+                "status":true,
+                "message":"berhasil menambahkan barang ke database"
             }
         },
         "error": {

@@ -34,3 +34,13 @@ model User_profile{
   user_id Int @unique
   user User @relation(fields: [user_id],references: [id])
 }
+
+model Barang{
+  id Int @id @default(autoincrement())
+  nama_barang String
+  stok_barang Int
+  harga Float
+  foto String?
+
+  created_at DateTime @default(now())
+}
